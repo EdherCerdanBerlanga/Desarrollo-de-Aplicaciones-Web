@@ -70,3 +70,26 @@ Reemplaza `USUARIO` por tu usuario de GitHub. No subas el archivo `.env`; ya est
 
 ## Alcance
 Este proyecto implementa CRUD y filtros por usuario, estado y prioridad. La actualización en tiempo real, autenticación y permisos de usuarios no están incluidos en esta versión inicial.
+
+
+## Pruebas unitarias y de integración
+Se utiliza Jest para ejecutar las pruebas y Supertest para probar las rutas HTTP.
+
+1. Configura MySQL y ejecuta `database/taskflow_db.sql`.
+2. Configura el archivo `.env`.
+3. Instala las dependencias con `npm install`.
+4. Ejecuta todas las pruebas:
+   ```bash
+   npm test
+   ```
+
+Las pruebas unitarias verifican las reglas de validación de los datos. Las pruebas de integración envían solicitudes a la API y verifican el resultado junto con la base de datos MySQL. Las pruebas de integración necesitan que MySQL esté encendido y configurado.
+
+## Documentación con Swagger
+Inicia el servidor con `npm start` y abre:
+
+`http://localhost:3000/api-docs`
+
+Swagger UI permite revisar los endpoints, sus parámetros, los datos JSON esperados y probar las solicitudes desde el navegador.
+
+También puedes importar y probar las rutas manualmente en Postman usando la dirección base `http://localhost:3000`.
